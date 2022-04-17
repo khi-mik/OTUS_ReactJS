@@ -17,8 +17,13 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+    "*.{js,jsx,ts,tsx}": ["npm run lint-fix", "git add"]
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -35,10 +40,13 @@
     "babel-preset-typescript": "^7.0.0-alpha.19",
     "core-js": "^3.21.1",
     "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.9.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "lint-staged": "^10.0.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.0",
     "ts-jest": "^27.1.4",
