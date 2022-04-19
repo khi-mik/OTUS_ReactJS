@@ -44,15 +44,15 @@ describe("secondPrioritiesCalc simple cases", () => {
   });
 });
 
-describe("thirdPrioritiesCalc simple cases", () => {
-  it("[32, + 32]", () => {
-    expect(thirdPrioritiesCalc([32, "+", 32])).toEqual(64);
-  });
+test.each([
+  [10, "+", 1, 11],
+  [10, "-", 1, 9],
+])('thirdPrioritiesCalc simple case: 10 +/- 1', (a, b, c, expected) => {
+  expect(thirdPrioritiesCalc([a, b, c])).toBe(expected);
+});
 
-  it("[32, - 32]", () => {
-    expect(thirdPrioritiesCalc([32, "-", 32])).toEqual(0);
-  });
-
+test.each
+describe("thirdPrioritiesCalc simple case: 32 - 32 + 10", () => {
   it("[32, - 32, +, 10]", () => {
     expect(thirdPrioritiesCalc([32, "-", 32, "+", 10])).toEqual(10);
   });
