@@ -28,7 +28,7 @@ run linter to check code
 ```npm run lint```
 
 run linter to fix code
-```npm run lint-fi```
+```npm run lint-fix```
 
 
 
