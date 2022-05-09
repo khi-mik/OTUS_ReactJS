@@ -19,21 +19,12 @@ class Cell extends Component<CellProps> {
   render() {
     return (
       <div className="Cell">
-        <div
-          style={{
-            width:  "50px",
-            height: "50px",
-            border: "solid 1px black"
-          }}
+        <div className="Cell-div-parent"
           onClick={this.props.clickHandler}
         >
-          <div 
+          <div className="Cell-div-child"
             id={String(this.props.id)}
-            style={{ 
-              textAlign: "center", 
-              position: "relative", 
-              top: "30%" 
-            }}>
+          >
 
             [{this.props.id}]
 
