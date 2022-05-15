@@ -27,17 +27,34 @@
     "lint-fix": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./"
   },
   "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "react-hooks",
+      "jest"
+    ],    
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "eslint:recommended", 
+      "plugin:@typescript-eslint/eslint-recommended", 
+      "plugin:@typescript-eslint/recommended"
     ],
+    "parserOptions": {
+      "sourceType": "module",
+      "parser": "babel-eslint",
+      "ecmaVersion": 2018
+    },
     "overrides": [
       {
         "files": [
-          "**/*.stories.*"
+          "**/*.stories.*",
+          "**/*.ts?(x)"
         ],
         "rules": {
-          "import/no-anonymous-default-export": "off"
+          "import/no-anonymous-default-export": "off",
+          "no-empty-function": "off",
+          "@typescript-eslint/no-empty-function": ["error", {"allow": ["arrowFunctions"]}]
         }
       }
     ]
