@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import './Field.css';
 import Cell from "../Cell/Cell";
 
