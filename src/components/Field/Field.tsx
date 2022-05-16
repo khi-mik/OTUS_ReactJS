@@ -16,7 +16,7 @@ class Field extends Component<FieldProps, FieldState> {
     vertCellCount: 10,
     horizCellCount: 10,
   }
-  cellID: number = 0
+  cellID = 0
   vertCellCnt: number = Math.max(this.props.vertCellCount, 10)
   horizCellCnt: number = Math.max(this.props.horizCellCount, 10)
 
@@ -36,7 +36,7 @@ class Field extends Component<FieldProps, FieldState> {
   }
 
   onClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    let clickedElement = e.target as HTMLDivElement
+    const clickedElement = e.target as HTMLDivElement
     alert(clickedElement.id)
   }
  
