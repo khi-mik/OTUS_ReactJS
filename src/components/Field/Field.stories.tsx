@@ -1,5 +1,4 @@
 import Field from './Field';
-import { storiesOf } from '@storybook/react';
 export default {
   title: "Field",
   component: Field,
