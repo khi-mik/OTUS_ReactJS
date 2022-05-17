@@ -29,7 +29,7 @@ jest.spyOn(window, 'alert').mockImplementation(() => {});
 describe("Field events tests", () => {
   it("Mouse move test", async () => {
     const { container } = render(<Field />)
-    fireEvent.mouseMove(screen.getByText("[33]"))
+    fireEvent.mouseMove(screen.getByText("33"))
     expect(container).toMatchSnapshot()
   })
 })

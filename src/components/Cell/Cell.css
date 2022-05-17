@@ -18,5 +18,5 @@
 .Cell-div-child {
   text-align: center;
   position: relative;
-  top: 30%;
+  height: inherit;
 }

@@ -54,7 +54,18 @@
         "rules": {
           "import/no-anonymous-default-export": "off",
           "no-empty-function": "off",
-          "@typescript-eslint/no-empty-function": ["error", {"allow": ["arrowFunctions"]}]
+          "@typescript-eslint/no-empty-function": ["error", {"allow": ["arrowFunctions"]}],
+          "eol-last": ["error", "always"],
+          "@typescript-eslint/member-delimiter-style": ["error", {
+            "multiline": {
+                "delimiter": "semi",
+                "requireLast": true
+            },
+            "singleline": {
+                "delimiter": "semi",
+                "requireLast": false
+            }
+          }] 
         }
       }
     ]

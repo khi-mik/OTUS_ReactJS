@@ -3,8 +3,8 @@ import Field from "../Field/Field"
 import './App.css';
 
 interface AppProps {
-  vertCellCount: number,
-  horizCellCount: number
+  vertCellCount: number;
+  horizCellCount: number;
 }
 
 class App extends Component<AppProps> {
