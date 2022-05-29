@@ -4,7 +4,6 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
-///type FIXME = any;
 type FIXME = Exclude<OrderState, "producing" | "buyingSupplies">[];
 
 const orderStates = [

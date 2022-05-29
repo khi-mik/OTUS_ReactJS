@@ -1,10 +1,15 @@
-// Задание первого уровня 2
+// Задание второго уровня 1
 // Есть объединение (юнион) типов заказов в различных состояниях
-// Нужно заменить FIXME на тип который достанет из Order все возможные состояния (state)
+// и функция filterOnlyInitialAndInWorkOrder которая принимает заказы в любых состояниях
+// А возвращает только initial и inWork
+// Нужно заменить FIXME на правильный тип вычисленный на основе Order
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-type FIXME = Order["state"];
+type WithoutInitialAndInWorkOrder = Exclude<
+  Order["state"],
+  "initial" | "inWork"
+>;
+type FIXME = Exclude<Order, { state: WithoutInitialAndInWorkOrder }> | null;
 
 type Order =
   | {
@@ -38,4 +43,10 @@ type Order =
       fullfillmentDate: Date;
     };
 
-export const getOrderState = (order: Order): FIXME => order.state;
+export const filterOnlyInitialAndInWorkOrder = (order: Order): FIXME => {
+  if (order.state === "initial" || order.state === "inWork") {
+    return order;
+  }
+
+  return null;
+};
