@@ -8,10 +8,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-         
+
+      - name: Install Packages into 3 folder
+        run: |
+          mkdir -p ./3
       - name: Install Packages
         run: |
-          npm install --prefix ./3
+          npm install 
       - name: Lint check
         run: |
           npm run lint
