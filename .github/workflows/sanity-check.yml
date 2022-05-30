@@ -11,7 +11,7 @@ jobs:
          
       - name: Install Packages
         run: |
-          cd 3 npm install
+          npm install --prefix ./3
       - name: Lint check
         run: |
           npm run lint
