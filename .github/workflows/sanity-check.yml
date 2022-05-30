@@ -1,0 +1,24 @@
+name: PR Sanity Check
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create 3 subdirectory
+        run: |
+          mkdir -p 3 
+      - name: Go to 3 subdirectory
+        run: |
+          cd 3
+          
+      - name: Install Packages
+        run: |
+          npm install 
+      - name: Lint check
+        run: |
+          npm run lint
