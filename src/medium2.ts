@@ -4,7 +4,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ///type FIXME = any;
-type FIXME<T> = T extends { defaultProps: infer U } ? U : unknown;
+type FIXME<T> = T extends { defaultProps: infer U } ? U : Partial<T>;
 
 // Hint: infer
 export const getDefaultProps = <T>(
